@@ -3,7 +3,8 @@
  */
 
 package controllers;
-
+import models.*;
+import views.*;
 /**
  * The Class MiniProjectController.
  */
@@ -29,6 +30,12 @@ public class SimulateurController {
      * Instantiates a new mini project controller.
      */
     protected SimulateurController() {
+
+
+      Simulateur simulateur = new Simulateur();
+      ConsoleView view = new ConsoleView();
+     simulateur.addObserver(view); 
+     simulateur.run(); 
 
     }
 

@@ -10,6 +10,11 @@ package config;
 public final class Config {
 
     /** The configuration. */
+    public static final String MASSE_VOLUMIQUE = "masse_volumique";
+    public static final String CHALEUR_MASSIQUE = "chaleur_massique";
+    public static final String CONDUCTIVITE_THERMIQUE = "conductivite_thermique";
+    public static final String MATERIAUX = "materiaux";
+    public static final Double KELVIN = 273.15;
     private static java.util.Map<String, Object> configuration;
 
     /**
