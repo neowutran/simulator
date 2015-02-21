@@ -9,13 +9,13 @@ import views.View;
 public class ConsoleView implements View, IObserver{
 
   @Override
-  public void update(Materiaux mur[]){
+  public void update(Materiaux mur[], int time){
   
-    afficher(mur);
+    afficher(mur, time);
 
   }
 
-  public void afficher(Materiaux mur[]) {
+  public void afficher(Materiaux mur[], int time) {
 
     for (int i = 0; i < mur.length; i++) {
 

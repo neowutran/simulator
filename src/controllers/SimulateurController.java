@@ -3,8 +3,9 @@
  */
 
 package controllers;
-import models.*;
-import views.*;
+import models.threading.*;
+
+import views.ConsoleView;
 /**
  * The Class MiniProjectController.
  */
@@ -32,9 +33,11 @@ public class SimulateurController {
     protected SimulateurController() {
 
 
-      Simulateur simulateur = new Simulateur();
+      Threading simulateur = new Barriere();
       ConsoleView view = new ConsoleView();
+     // WebView webview = new WebView();
      simulateur.addObserver(view); 
+   // simulateur.addObserver(webview);
      simulateur.run(); 
 
     }

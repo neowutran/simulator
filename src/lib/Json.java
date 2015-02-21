@@ -38,7 +38,7 @@ public final class Json {
             final Gson gson = new Gson();
             return gson.fromJson(text, java.util.Map.class);
         } catch (final java.io.IOException x) {
-      System.out.println("NOT GOOD");
+          System.out.println(x.getMessage());
           return null;
         }
     }

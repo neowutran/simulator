@@ -6,5 +6,5 @@ public interface IObservable
 
         void deleteObserver(IObserver o);
 
-        void notifyObservers(Materiaux mur[]);
+        void notifyObservers(Materiaux mur[], int time);
 }

@@ -37,7 +37,7 @@ public final class CopyFile {
             sources.close();
             out.close();
         } catch (final java.io.IOException ex) {
-        System.out.println("NOT GOOD");
+        System.out.println(ex.getMessage());
         }
     }
 

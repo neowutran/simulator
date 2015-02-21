@@ -4,7 +4,10 @@
 	<classpathentry kind="lib" path="build/jar/Simulateur.jar"/>
 	<classpathentry kind="lib" path="lib/google-gson-2.2.4/gson-2.2.4-javadoc.jar"/>
 	<classpathentry kind="lib" path="lib/google-gson-2.2.4/gson-2.2.4-sources.jar"/>
-	<classpathentry kind="lib" path="lib/google-gson-2.2.4/gson-2.2.4.jar"/>
+  <classpathentry kind="lib" path="lib/google-gson-2.2.4/gson-2.2.4.jar"/>
+  <classpathentry   kind="lib" path="lib/webbit-0.4.15-full.jar"/>
+
+  <classpathentry   kind="lib" path="lib/ProgConcWebSocketServer.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

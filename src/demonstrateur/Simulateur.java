@@ -20,6 +20,8 @@ public final class Simulateur {
     public static final String FOLDER = "Simulateur" + java.io.File.separator;
     /** The Constant CONFIG. */
     public static final String CONFIG = "config.json";
+    public static final String INDEX = "index.html";
+    public static final String INDEX_FOLDER = "web"+java.io.File.separator;
 
     /**
      * Load config file.
@@ -59,6 +61,16 @@ public final class Simulateur {
                     .getResourceAsStream(Simulateur.CONFIG),
                     Simulateur.FOLDER + Simulateur.CONFIG);
         }
+
+    if (!new java.io.File(Simulateur.FOLDER + Simulateur.INDEX).exists()) {
+            CopyFile.copyFile(this.getClass().getClassLoader()
+                    .getResourceAsStream(Simulateur.INDEX_FOLDER + Simulateur.INDEX),
+                    Simulateur.FOLDER + Simulateur.INDEX);
+        }
+
+
+
+
         Simulateur.loadConfigFile(Paths.get(Simulateur.FOLDER,
                 Simulateur.CONFIG));
         SimulateurController.getInstance();

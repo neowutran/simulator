@@ -34,7 +34,7 @@ public class Observable implements IObservable{
   }
 
   @Override
-  public synchronized void notifyObservers(Materiaux notification[])
+  public synchronized void notifyObservers(Materiaux notification[], int time)
   {
     if (observers == null)
     {
@@ -42,7 +42,7 @@ public class Observable implements IObservable{
     }
     for (IObserver o : observers)
     {
-      o.update(notification);
+      o.update(notification, time);
     }
   }
 }

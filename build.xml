@@ -33,6 +33,9 @@
     <fileset dir="${basedir}">
       <include name="*.json"/>
     </fileset>
+    <fileset dir="${basedir}">
+      <include name="**/index.html"/>
+      </fileset>
       <!--<fileset dir="${classes.dir}" includes="**/*.class" />-->
     <zipgroupfileset dir="${lib.dir}" includes="**/*.jar" />
     </jar>
