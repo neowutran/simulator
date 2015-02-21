@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="webbit-0.4.15-full">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/libs/webbit-0.4.15-full.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
