@@ -33,12 +33,22 @@ public class SimulateurController {
     protected SimulateurController() {
 
 
-      Threading simulateur = new Barriere();
-      ConsoleView view = new ConsoleView();
+      
+      long debut = System.currentTimeMillis();
+      Threading simulateur = new NoThread();
+  
+      /*
+       *Choix des affichages present, ils fonctionnent selon le pattern observeur-observable.
+       */
+         ConsoleView view = new ConsoleView();
      // WebView webview = new WebView();
-     simulateur.addObserver(view); 
+      simulateur.addObserver(view); 
    // simulateur.addObserver(webview);
-     simulateur.run(); 
+    
+      //Lancement de la simulation
+      simulateur.run(); 
+     long fin = System.currentTimeMillis();
+     System.out.println("Temps d'execution: "+(fin - debut)+" ms");
 
     }
 

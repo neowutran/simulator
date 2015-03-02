@@ -28,17 +28,19 @@ public class Simulateur{
   private double temps_entre_2calcul = 0.01;
   private double epaisseur_tranche = 0.001;
 
+  private double C;
+
   public Materiaux[] getMur(){
     return mur_t1;
   }
 
 
   public void mur1EqualMur2(){
-  mur_t1 = mur_t2;
+    mur_t1 = mur_t2;
   }
 
   public int getNombreTranche(){
-  return nombre_tranche;
+    return nombre_tranche;
   }
 
 
@@ -58,6 +60,13 @@ public class Simulateur{
       mur_t1[i].setValue(temperature_initiale_interieur);
       mur_t2[i].setValue(temperature_initiale_interieur);
     }
+    setC(0);
+  }
+
+  public void setC(int x){
+    this.C = (mur_t1[x].getConductiviteThermique() * temps_entre_2calcul)
+      / (mur_t1[x].getMasseVolumique() * mur_t1[x].getChaleurMassique() * epaisseur_tranche * epaisseur_tranche); // TODO
+
   }
 
   public void nextIteration(int x) {
@@ -65,8 +74,6 @@ public class Simulateur{
     // T au temps t: mur_t1
     // T au temps t+1: mur_t2
     int delta = 1;
-    double C = (mur_t1[x].getConductiviteThermique() * temps_entre_2calcul)
-      / (mur_t1[x].getMasseVolumique() * mur_t1[x].getChaleurMassique() * epaisseur_tranche * epaisseur_tranche); // TODO
     mur_t2[x].setValue(mur_t1[x].getValue() + C
         * (mur_t1[x + delta].getValue() + mur_t1[x - delta].getValue() - 2 * mur_t1[x].getValue()));
   }

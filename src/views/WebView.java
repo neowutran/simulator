@@ -21,7 +21,7 @@ public class WebView implements View, IObserver{
 
 
       Double temperature = mur[i].getValue() - Config.KELVIN;
-      String message = "<elt><time>"+time+"</time><X>"+i+"</X><value>"+temperature+"</value></elt>";
+      String message = "<elt><time>"+time+"</time><X>"+i+"</X><value>"+temperature.intValue()+"</value></elt>";
       JavaWebSocketServer.getInstance().broadcastMessage(message);
 
       System.out.print(temperature);
@@ -37,6 +37,7 @@ public class WebView implements View, IObserver{
 
     JavaWebSocketServer.getInstance();
       try {
+          //Permet de laisser le temps a l'utilisateur de se connecter sur le site
           Thread.sleep(20000);
       } catch (InterruptedException e) {
           e.printStackTrace();

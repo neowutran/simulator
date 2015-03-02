@@ -20,7 +20,7 @@ public class ConsoleView implements View, IObserver{
     for (int i = 0; i < mur.length; i++) {
 
       Double temperature = mur[i].getValue() - Config.KELVIN;
-      System.out.print(temperature);
+      System.out.print(temperature.intValue());
       if (i < mur.length - 1) {
         System.out.print(",");
       }
