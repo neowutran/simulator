@@ -34,6 +34,7 @@ public class Barriere extends Threading{
         @Override
         public void run(){
 
+          long debut = System.currentTimeMillis();
           while(!isDone){
 
 
@@ -55,6 +56,8 @@ public class Barriere extends Threading{
               simulateur.nextIteration(iteration);
             }
           }
+          long fin = System.currentTimeMillis();
+          System.out.println("Temps d'execution: "+(fin - debut)+" ms.");
         }
 
       }).start();

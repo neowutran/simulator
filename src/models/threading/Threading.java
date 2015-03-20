@@ -9,7 +9,7 @@ import models.Observable;
 import models.Simulateur;
 
 public abstract class Threading extends Observable{
-  protected static final int NOMBRE_ITERATION=331;
+  protected static final int NOMBRE_ITERATION=1000;
   protected int nombre_iteration;
   private final Lock lock = new ReentrantLock();
   private List<Integer> computed = new ArrayList();

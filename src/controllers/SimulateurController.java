@@ -31,24 +31,18 @@ public class SimulateurController {
      * Instantiates a new mini project controller.
      */
     protected SimulateurController() {
-
-
-      
-      long debut = System.currentTimeMillis();
-      Threading simulateur = new NoThread();
+      Threading simulateur = new Barriere();
   
       /*
        *Choix des affichages present, ils fonctionnent selon le pattern observeur-observable.
        */
          ConsoleView view = new ConsoleView();
      // WebView webview = new WebView();
-      simulateur.addObserver(view); 
+     simulateur.addObserver(view); 
    // simulateur.addObserver(webview);
     
       //Lancement de la simulation
       simulateur.run(); 
-     long fin = System.currentTimeMillis();
-     System.out.println("Temps d'execution: "+(fin - debut)+" ms");
 
     }
 

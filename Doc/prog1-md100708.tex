@@ -87,21 +87,21 @@
 \maketitle
 
 \section{Parametre}
-Dans le code java fourni, le programme fait 331 iteration et affiche cela sur la sortie standard. 
-Le mur testé est uniquement composé de laine de verre.
+Dans le code java fourni, le programme fait 1000 iteration et affiche cela sur la sortie standard. 
+Le mur testé est composé de 20cm de brique puis 12cm de laine de verre.
 Les constantes utilisées sont:\\ 
 \begin{itemize}
-\item temps entre deux calcul: 0.01
-\item epaisseur de tranche: 0.001
-\item nombre de tranche: 10
+\item temps entre deux calcul: 864000
+\item epaisseur de tranche: 4
 \end{itemize}
+Avec ces parametre il faut 50 iteration pour que la couche la plus proche du mur interieur change de temperature.\\
 
 \section{Algorithme}
 Pour cette premiere version il n'y a qu'un seul thread.
 Le programme fait simplement une boucle dans lequel il calcul la temperature de la tranche de mur courrante a la periode t+1.
 
 \section{Temps d'execution}
-Le programme met une 30aine de milliseconde a effectuer 100 000 iterations. (bien evidement aucun affichage n'etait present pour ces tests).
+Le programme met environs 80 milliseconde a effectuer 100 000 iterations. (bien evidement aucun affichage n'etait present pour ces tests).
 Pour mesurer ce temps, nous avons recuperer le temps en milliseconde au debut de l'execution du programme, 
 puis le temps en milliseconde a la fin de l'execution du programme.
 
@@ -110,5 +110,6 @@ Le choix des affichages present se trouve dans le fichier "controllers/Simulateu
 Le calcul de la variable C, le temps entre deux simulation, l'epaisseur des tranches, le nombre de tranche, et la simulation se trouve dans le fichier "models/Simulateur.java".\\
 Le nombre d'iteration a effectuer se trouve dans le fichier "models/threading/Threading.java".\\
 
-
+\section{Pas d'iteration}
+Il faut mettre un pas (temps entre 2 calcul) de 60*60*24*365 pour simuler une année complete.\\
 \end{document}

@@ -16,7 +16,7 @@ public class Materiaux{
   private double value = 0;
   private String typeMateriaux;
 
-//Recupere tous les parametre du materiaux dans le fichier de configuration
+  //Recupere tous les parametre du materiaux dans le fichier de configuration
   public double getChaleurMassique(){
     return (double)((Map<String,Double>)((Map<String,Map<String,Double>>)Config.getConfiguration().get(Config.MATERIAUX)).get(typeMateriaux)).get(Config.CHALEUR_MASSIQUE);
   }
@@ -32,6 +32,10 @@ public class Materiaux{
   }
   public void setValue(double newValue){
     value=newValue;
+  }
+
+  public String getName(){
+    return typeMateriaux;
   }
 
   private Materiaux(){}
