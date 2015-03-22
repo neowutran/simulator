@@ -1,5 +1,5 @@
-/*
- * @author Martini Didier - Fabien Pinel - Maxime Touroute
+/**
+ * @author Martini Didier
  */
 
 package lib;

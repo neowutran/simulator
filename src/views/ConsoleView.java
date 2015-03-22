@@ -1,4 +1,7 @@
-
+/**
+ * @author Martini Didier
+ *
+ */
 package views;
 import config.Config;
 
@@ -29,6 +32,9 @@ public class ConsoleView implements View, IObserver{
           System.out.print(",");
         }else{
           System.out.print("-");
+          
+      System.out.print(temperature.intValue());
+      System.out.print(",");
         }
       }
 

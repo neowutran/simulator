@@ -1,3 +1,7 @@
+/**
+ * @author Martini Didier
+ *
+ */
 package views;
 import lib.javasocket.*;
 import models.IObserver;

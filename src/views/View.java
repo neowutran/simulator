@@ -1,3 +1,7 @@
+/**
+ * @author Martini Didier
+ *
+ */
 package views;
 import models.Materiaux;
 public interface View{

@@ -3,8 +3,8 @@ INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
 INPUT prog1-md100708.tex
 OUTPUT prog1-md100708.log
-INPUT /usr/share/texmf-dist/tex/latex/base/article.cls
-INPUT /usr/share/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/share/texmf-dist/tex/latex/base/report.cls
+INPUT /usr/share/texmf-dist/tex/latex/base/report.cls
 INPUT /usr/share/texmf-dist/tex/latex/base/size11.clo
 INPUT /usr/share/texmf-dist/tex/latex/base/size11.clo
 INPUT /usr/share/texmf-dist/fonts/map/fontname/texfonts.map

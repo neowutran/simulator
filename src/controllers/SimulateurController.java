@@ -1,4 +1,4 @@
-/*
+/**
  * @author Martini Didier
  */
 
@@ -36,7 +36,7 @@ public class SimulateurController {
       /*
        *Choix des affichages present, ils fonctionnent selon le pattern observeur-observable.
        */
-         ConsoleView view = new ConsoleView();
+        ConsoleView view = new ConsoleView();
      // WebView webview = new WebView();
      simulateur.addObserver(view); 
    // simulateur.addObserver(webview);

@@ -34,7 +34,7 @@ public class Simulateur{
   public Simulateur() {
     String materiaux1 = "brique";
     String materiaux2 = "laine_verre";
-    Double nbtranche =  TAILLE_MUR / EPAISSEUR_TRANCHE;
+    Double nbtranche =  TAILLE_MUR / (EPAISSEUR_TRANCHE*100);
     nombre_tranche = nbtranche.intValue();
     mur_t1 = new Materiaux[nombre_tranche];
     mur_t2 = new Materiaux[nombre_tranche];
@@ -43,7 +43,7 @@ public class Simulateur{
     mur_t2[0] = new Materiaux(materiaux1);
     mur_t1[0].setValue(temperature_initiale_exterieur);
     mur_t2[0].setValue(temperature_initiale_exterieur);
-    Double nbtranchebeton = 20 / EPAISSEUR_TRANCHE;
+    Double nbtranchebeton = 20 / (EPAISSEUR_TRANCHE*100);
     for (int i = 1; i < nbtranchebeton.intValue(); i++) {
       mur_t1[i] = new Materiaux(materiaux1);
       mur_t2[i] = new Materiaux(materiaux1);
@@ -51,7 +51,7 @@ public class Simulateur{
       mur_t2[i].setValue(temperature_initiale_interieur);
     }
 
-    for(int i = nbtranchebeton.intValue(); i < nbtranche; i++){
+    for(int i = nbtranchebeton.intValue(); i < nombre_tranche; i++){
 
       mur_t1[i] = new Materiaux(materiaux2);
       mur_t2[i] = new Materiaux(materiaux2);
@@ -59,19 +59,36 @@ public class Simulateur{
       mur_t2[i].setValue(temperature_initiale_interieur);
 
     }
-   this.setCoefficient(materiaux1, 0);
-   this.setCoefficient(materiaux2, 0);
+    this.setCoefficient(materiaux1, 0);
+    this.setCoefficient(materiaux2, nombre_tranche-1);
   }
 
   public void setCoefficient(String name, int x){
     this.coefficient_isolant.put(name, (mur_t1[x].getConductiviteThermique() * TEMPS_ENTRE_CALCUL)
-      / (mur_t1[x].getMasseVolumique() * mur_t1[x].getChaleurMassique() * EPAISSEUR_TRANCHE * EPAISSEUR_TRANCHE));
+        / (mur_t1[x].getMasseVolumique() * mur_t1[x].getChaleurMassique() * EPAISSEUR_TRANCHE * EPAISSEUR_TRANCHE));
 
   }
 
   public void nextIteration(int x) {
-    mur_t2[x].setValue(
-        mur_t1[x].getValue() + this.coefficient_isolant.get(mur_t1[x-1].getName())
-        * (mur_t1[x - 1].getValue() - mur_t1[x].getValue()) + this.coefficient_isolant.get(mur_t1[x+1].getName()) * (mur_t1[x+1].getValue() - mur_t1[x].getValue()));
+
+    switch(x){
+      case 1:case 2: case 3: case 4:
+        mur_t2[x].setValue(mur_t1[x].getValue()+ this.coefficient_isolant.get(mur_t1[x].getName())* (mur_t1[x-1].getValue() + mur_t1[x+1].getValue() - 2* mur_t1[x].getValue()));
+        break;
+      case 5:
+        mur_t2[x].setValue(
+            mur_t1[x].getValue() + this.coefficient_isolant.get(mur_t1[x-1].getName())
+            * (mur_t1[x - 1].getValue() - mur_t1[x].getValue()) + this.coefficient_isolant.get(mur_t1[x+1].getName()) * (mur_t1[x+1].getValue() - mur_t1[x].getValue()));
+
+        break;
+      case 6: case 7:
+
+        mur_t2[x].setValue(mur_t1[x].getValue()+ this.coefficient_isolant.get(mur_t1[x].getName())* (mur_t1[x-1].getValue() + mur_t1[x+1].getValue() - 2* mur_t1[x].getValue()));
+        break;
+
+    }
+    /*mur_t2[x].setValue(
+      mur_t1[x].getValue() + this.coefficient_isolant.get(mur_t1[x-1].getName())
+     * (mur_t1[x - 1].getValue() - mur_t1[x].getValue()) + this.coefficient_isolant.get(mur_t1[x+1].getName()) * (mur_t1[x+1].getValue() - mur_t1[x].getValue()));*/
   }
 }

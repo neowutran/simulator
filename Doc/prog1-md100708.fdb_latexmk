@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1425326693 "prog1-md100708.tex" "prog1-md100708.pdf" "prog1-md100708" 1425326693
+["pdflatex"] 1427036326 "prog1-md100708.tex" "prog1-md100708.pdf" "prog1-md100708" 1427036328
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1407968443 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1407968438 2327 9d6df24f9c4f7368395224341a95523a ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1407968436 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
@@ -52,11 +52,11 @@
   "/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty" 1407968438 79178 b2e326c351e876df0e5e23df2e02441b ""
   "/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty" 1407968438 4082 502152465aedb8f6a3c4b0b7c0fa8ae5 ""
   "/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty" 1407968438 2637 846ebe982d3549c7ede7ce135456f54a ""
-  "/usr/share/texmf-dist/tex/latex/base/article.cls" 1407968439 20496 66dd832c447553f6776fbeac03bb0580 ""
   "/usr/share/texmf-dist/tex/latex/base/fontenc.sty" 1407968439 4360 ff7a73ddc57baaf1815161c4698e9fb4 ""
   "/usr/share/texmf-dist/tex/latex/base/inputenc.sty" 1407968439 5295 be5d5092b838cbeebda7de24a3ab9dd2 ""
   "/usr/share/texmf-dist/tex/latex/base/omsenc.dfu" 1407968439 1793 7bb4e1cf8d618812dcf05cd85cccb71d ""
   "/usr/share/texmf-dist/tex/latex/base/ot1enc.dfu" 1407968439 2545 afa23f923cc3519eb0b895cbf3dadfb5 ""
+  "/usr/share/texmf-dist/tex/latex/base/report.cls" 1407968439 23555 fd5849e9decad6551d2acabe39b35eb4 ""
   "/usr/share/texmf-dist/tex/latex/base/size11.clo" 1407968439 8983 e08a9a7009d9a8f8c6507333f96e336e ""
   "/usr/share/texmf-dist/tex/latex/base/t1enc.def" 1407968439 9097 3d740f5a942bdde0d974eb1398aae41c ""
   "/usr/share/texmf-dist/tex/latex/base/t1enc.dfu" 1407968439 7405 c70c194719f79b7d070eeb68af109b09 ""
@@ -109,11 +109,11 @@
   "/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1407968439 55224 a43bab84e0ac5e6efcaf9a98bde73a94 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1407968443 31669 df537245012f3e5f05bdc55644b7a3df ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1423000697 1365593 12d93db0bc8e14844fb010385610e716 ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1423121369 7194337 2a01c7840811d4fde393756d4ea9eb89 ""
-  "prog1-md100708.aux" 1425326693 553 938be2757b2ce1d1c78f4caba9d2f5c9 ""
-  "prog1-md100708.tex" 1425326673 4643 95dfb5b24cad0bc2caec38fd3f92f7dc ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1425905904 7194337 757be324b25391af6ea2f31e25cda98e ""
+  "prog1-md100708.aux" 1427036327 553 938be2757b2ce1d1c78f4caba9d2f5c9 ""
+  "prog1-md100708.tex" 1427036319 4642 e281a4155acebdc69d03826730a4d94a ""
   (generated)
-  "prog1-md100708.log"
   "prog1-md100708.pdf"
+  "prog1-md100708.log"
   "prog1-md100708.out"
   "prog1-md100708.aux"

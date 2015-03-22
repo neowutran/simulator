@@ -1,3 +1,7 @@
+/**
+ * @author Martini Didier
+ *
+ */
 package models.threading;
 
 import java.util.concurrent.BrokenBarrierException;

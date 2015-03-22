@@ -1,3 +1,7 @@
+/**
+ * @author Martini Didier
+ *
+ */
 package models;
 import models.Materiaux;
 public interface IObservable

@@ -6,10 +6,8 @@ import config.Config;
 
 
 /**
+ * @author Martini Didier
  *
- *
- * @author
- * @version
  */
 public class Materiaux{
 

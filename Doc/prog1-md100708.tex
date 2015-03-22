@@ -1,115 +1,21 @@
-\documentclass[11pt,a4paper,titlepage]{article}
-\usepackage[a4paper]{geometry}
-\usepackage[utf8]{inputenc}
+\documentclass[a4paper]{article}
+
 \usepackage[english]{babel}
-\usepackage{lipsum}
-
-\usepackage{amsmath, amssymb, amsfonts, amsthm, fouriernc, mathtools}
-% mathtools for: Aboxed (put box on last equation in align envirenment)
-\usepackage{microtype} %improves the spacing between words and letters
-
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
 \usepackage{graphicx}
-\graphicspath{ {./pics/} {./eps/}}
-\usepackage{epsfig}
-\usepackage{epstopdf}
+\usepackage[colorinlistoftodos]{todonotes}
 
+\title{Rapport programmation concurrente}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% COLOR DEFINITIONS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[svgnames]{xcolor} % Enabling mixing colors and color's call by 'svgnames'
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\definecolor{MyColor1}{rgb}{0.2,0.4,0.6} %mix personal color
-\newcommand{\textb}{\color{Black} \usefont{OT1}{lmss}{m}{n}}
-\newcommand{\blue}{\color{MyColor1} \usefont{OT1}{lmss}{m}{n}}
-\newcommand{\blueb}{\color{MyColor1} \usefont{OT1}{lmss}{b}{n}}
-\newcommand{\red}{\color{LightCoral} \usefont{OT1}{lmss}{m}{n}}
-\newcommand{\green}{\color{Turquoise} \usefont{OT1}{lmss}{m}{n}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% FONTS AND COLORS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%    SECTIONS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{titlesec}
-\usepackage{sectsty}
-%%%%%%%%%%%%%%%%%%%%%%%%
-%set section/subsections HEADINGS font and color
-\sectionfont{\color{MyColor1}}  % sets colour of sections
-\subsectionfont{\color{MyColor1}}  % sets colour of sections
-
-%set section enumerator to arabic number (see footnotes markings alternatives)
-\renewcommand\thesection{\arabic{section}.} %define sections numbering
-\renewcommand\thesubsection{\thesection\arabic{subsection}} %subsec.num.
-
-%define new section style
-\newcommand{\mysection}{
-\titleformat{\section} [runin] {\usefont{OT1}{lmss}{b}{n}\color{MyColor1}} 
-{\thesection} {3pt} {} } 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%		CAPTIONS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{caption}
-\usepackage{subcaption}
-%%%%%%%%%%%%%%%%%%%%%%%%
-\captionsetup[figure]{labelfont={color=Turquoise}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%		!!!EQUATION (ARRAY) --> USING ALIGN INSTEAD
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%using amsmath package to redefine eq. numeration (1.1, 1.2, ...) 
-%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\theequation}{\thesection\arabic{equation}}
-
-%set box background to grey in align environment 
-\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
-\makeatletter
-\patchcmd{\@Aboxed}{\boxed{#1#2}}{\colorbox{black!15}{$#1#2$}}{}{}%
-\patchcmd{\@boxed}{\boxed{#1#2}}{\colorbox{black!15}{$#1#2$}}{}{}%
-\makeatother
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% PREPARE TITLE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{\blue Rendu programmation concurrente \\
-\blueb Simulateur echange thermique version $1$}
 \author{Martini Didier}
+
 \date{\today}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 \begin{document}
 \maketitle
 
-\section{Parametre}
-Dans le code java fourni, le programme fait 1000 iteration et affiche cela sur la sortie standard. 
-Le mur testé est composé de 20cm de brique puis 12cm de laine de verre.
-Les constantes utilisées sont:\\ 
-\begin{itemize}
-\item temps entre deux calcul: 864000
-\item epaisseur de tranche: 4
-\end{itemize}
-Avec ces parametre il faut 50 iteration pour que la couche la plus proche du mur interieur change de temperature.\\
 
-\section{Algorithme}
-Pour cette premiere version il n'y a qu'un seul thread.
-Le programme fait simplement une boucle dans lequel il calcul la temperature de la tranche de mur courrante a la periode t+1.
+\section{Introduction}
 
-\section{Temps d'execution}
-Le programme met environs 80 milliseconde a effectuer 100 000 iterations. (bien evidement aucun affichage n'etait present pour ces tests).
-Pour mesurer ce temps, nous avons recuperer le temps en milliseconde au debut de l'execution du programme, 
-puis le temps en milliseconde a la fin de l'execution du programme.
-
-\section{Modifier le programme}
-Le choix des affichages present se trouve dans le fichier "controllers/SimulateurController.java".\\
-Le calcul de la variable C, le temps entre deux simulation, l'epaisseur des tranches, le nombre de tranche, et la simulation se trouve dans le fichier "models/Simulateur.java".\\
-Le nombre d'iteration a effectuer se trouve dans le fichier "models/threading/Threading.java".\\
-
-\section{Pas d'iteration}
-Il faut mettre un pas (temps entre 2 calcul) de 60*60*24*365 pour simuler une année complete.\\
 \end{document}
