@@ -1,0 +1,2 @@
+Code:
+code des thread + objet partager (rdv, ce qu'il y a dans la barriere etc) + main (creer barriere, creer thread, attendre fin thread) 

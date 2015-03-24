@@ -47,12 +47,12 @@ public class Simulateur{
     mur_t1[0] = new Materiaux(materiaux1, temperature_initiale_exterieur);
     mur_t2[0] = mur_t1[0];
     Double nbtranchebeton = 20 / (EPAISSEUR_TRANCHE*100);
-    for (int i = 1; i < nbtranchebeton.intValue(); i++) {
+    for (int i = 1; i <= nbtranchebeton.intValue(); i++) {
       mur_t1[i] = new Materiaux(materiaux1, temperature_initiale_interieur);
        mur_t2[i] = new Materiaux(materiaux1, temperature_initiale_interieur);
     }
 
-    for(int i = nbtranchebeton.intValue(); i < nombre_tranche; i++){
+    for(int i = nbtranchebeton.intValue()+1; i < nombre_tranche; i++){
       mur_t1[i] = new Materiaux(materiaux2, temperature_initiale_interieur);
       mur_t2[i] = new Materiaux(materiaux2, temperature_initiale_interieur);
     }
