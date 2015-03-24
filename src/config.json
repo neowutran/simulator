@@ -21,6 +21,17 @@
     }
 
 
+  },
+  "simulation":{
+    "nombre_iteration": 16000,
+    "taille_tranche": 4,
+    "temps_mesure": 600,
+    "taille_mur": 32,
+    "materiaux": [
+      {"brique": 10},
+      {"laine_verre":22}
+
+    ]
   }
 
 }

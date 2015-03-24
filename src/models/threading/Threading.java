@@ -9,11 +9,12 @@ import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import models.Materiaux;
 import models.Observable;
 import models.Simulateur;
 
 public abstract class Threading extends Observable{
-  protected static final int NOMBRE_ITERATION=10;
+  protected static final int NOMBRE_ITERATION=60;
   protected int nombre_iteration;
   private final Lock lock = new ReentrantLock();
   private List<Integer> computed = new ArrayList();
@@ -28,6 +29,10 @@ public abstract class Threading extends Observable{
     nombre_iteration = NOMBRE_ITERATION;
   }
 
+  /**
+   * Recupere l'index a calculer
+   *
+   */
   protected Integer getAndRemoveIteration(){
 
     lock.lock();
@@ -42,9 +47,12 @@ public abstract class Threading extends Observable{
     return coucheNumber;
   }
 
+  /**
+   * Cette methode est appeler ca chaque reunion des thread (barriere), elle initialiser les elements necessaire pour la suite des calcul
+   */
   protected void nextTime(){
+    notifyObservers(simulateur.getMur(), NOMBRE_ITERATION - simulateur.getNombreTranche()); 
     simulateur.mur1EqualMur2();
-    notifyObservers(simulateur.getMur(), NOMBRE_ITERATION - simulateur.getNombreTranche());
     if(nombre_iteration == 0){
       isDone = true;
       return;

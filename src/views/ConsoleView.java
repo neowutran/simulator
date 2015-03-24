@@ -21,7 +21,6 @@ public class ConsoleView implements View, IObserver{
   public void afficher(Materiaux mur[], int time) {
 
 
-    String materiaux = mur[0].getName();
     for (int i = 0; i < mur.length; i++) {
 
       Double temperature = mur[i].getValue() - Config.KELVIN;

@@ -28,15 +28,17 @@ public class Materiaux{
   public double getValue(){
     return value;
   }
-  public void setValue(double newValue){
-    value=newValue;
-  }
 
   public String getName(){
     return typeMateriaux;
   }
 
   private Materiaux(){}
+
+  public Materiaux(String newtypeMateriaux, double newvalue){
+  this.typeMateriaux = newtypeMateriaux;
+  this.value = newvalue;
+  }
 
   public Materiaux(String newtypeMateriaux){
 

@@ -47,11 +47,9 @@ public class Barriere extends Threading{
               try{
                 barrier.await();
               }catch(InterruptedException e){
-                //TODO
-                System.out.println("TODO");
+                System.out.println(e.getMessage());
               }catch(BrokenBarrierException ex){
-                //TODO
-                System.out.println("TODO");
+                System.out.println(ex.getMessage());
               }finally{
                 continue;
               }
